@@ -3,151 +3,158 @@
 ## Implement identities in Azure AD (20–25%)
 
 ### Configure and manage an Azure AD tenant
-* Configure and manage Azure AD roles
-* Configure delegation by using administrative units
-  * Requires typically a owener of the group. 
-* Analyze Azure AD role permissions
-  * Auth admin, Security Admin, User Admin, Global Admin - Permissions, scopes, limitations and least privilge. 
-* Configure and manage custom domains
-  * Veryfing DNS domain with MX and TXT -> Set to primary 
-  * A vs AAAA
-  * CNAME 
-* Configure tenant-wide settings 
+
+    * Configure and manage Azure AD roles
+        Business Case: Need to delegate specific administrative tasks to different teams within the organization.
+        Product Solution: Azure AD Role-Based Access Control (RBAC).
+        Pros: Granular control, segregation of duties, enhanced security.
+        Cons: Complexity in managing numerous roles, potential misconfiguration.
+        Licensing: Available in Azure AD Free, advanced features in Premium P1.
+
+    * Configure delegation by using administrative units
+        Business Case: A large organization wants to delegate admin tasks to different departments without giving full control.
+        Product Solution: Azure AD Administrative Units.
+        Pros: Improved delegation, better control, reduced risk of unauthorized access.
+        Cons: Can be complex to set up, requires careful planning.
+        Licensing: Requires Azure AD Premium P1.
+
+    * Analyze Azure AD role permissions
+        Business Case: Regularly review and audit role permissions to comply with internal policies and regulatory requirements.
+        Product Solution: Azure AD Access Reviews.
+        Pros: Ensures compliance, identifies excessive permissions, enhances security.
+        Cons: Requires ongoing management, potential complexity.
+        Licensing: Requires Azure AD Premium P2.
+
+    * Configure and manage custom domains
+        Business Case: A company wants to use its branded domain name for user identities.
+        Product Solution: Azure AD Custom Domains.
+        Pros: Branding alignment, professional appearance, trust-building.
+        Cons: Requires DNS management, potential complexity in configuration.
+        Licensing: Available in Azure AD Free.
+
+    * Configure tenant-wide settings
+        Business Case: Implementing organization-wide security policies and configurations.
+        Product Solution: Azure AD Tenant Settings.
+        Pros: Consistency across the organization, centralized control.
+        Cons: Potential for over-restriction, careful planning required.
+        Licensing: Available in Azure AD Free, advanced features in Premium P1/P2
 
 ### Create, configure, and manage Azure AD identities
-* Create, configure, and manage users
-* Create, configure, and manage groups
-* Configure and manage device join and registration, including writeback
-* Assign, modify, and report on licenses 
+
+    * Create, configure, and manage users
+        Business Case: Onboarding a large number of employees after a company merger.
+        Product Solution: Azure AD Bulk User Management.
+        Pros: Efficient, reduces manual errors, scalable.
+        Cons: Requires proper CSV formatting, potential for bulk errors.
+        Licensing: Available in Azure AD Free, advanced features in Premium P1.
+
+    * Create, configure, and manage groups
+        Business Case: Segmenting users by department for resource access.
+        Product Solution: Azure AD Groups.
+        Pros: Organized resource access, easier management.
+        Cons: Can become complex with nested groups, requires regular auditing.
+        Licensing: Available in Azure AD Free.
+
+    * Configure and manage device join and registration, including writeback
+        Business Case: Allowing employees to use their personal devices for work.
+        Product Solution: Azure AD Device Registration.
+        Pros: Flexibility, potential cost savings, enhanced productivity.
+        Cons: Security concerns, requires robust device management policies.
+        Licensing: Requires Azure AD Premium P1 for advanced features.
+
+    * Assign, modify, and report on licenses
+        Business Case: Ensuring all employees have the necessary software licenses.
+        Product Solution: Azure AD License Management.
+        Pros: Centralized management, cost tracking, compliance.
+        Cons: Requires regular updates, potential for over or under-licensing.
+        Licensing: Available in Azure AD Free, advanced features in Premium P1.
 
 ### Implement and manage external identities
-* Manage external collaboration settings in Azure AD
-* Invite external users, individually or in bulk
-* Manage external user accounts in Azure AD
-* Configure identity providers, including SAML or WS-fed 
 
-### Implement and manage hybrid identity
-* Implement and manage Azure AD Connect
-  * PHS, PTA and Federation
-* Implement and manage Azure AD Connect cloud sync
-  *  Prefered Cloud Native Sync
-* Implement and manage Password Hash Synchronization (PHS)
-  *  Prefered Cloud Native Sync
-  *  Makes a hashed copy of the passwords of the users.
-  *  No more future development
-* Implement and manage Pass-Through Authentication (PTA)
-  *  Installed agents on-prem
-  *  Security risk: If on-prem AD DS is unavaible, it can't authenticate a user. Therefore some choose to use PTA with PHS.
-  *  No more future development
-* Implement and manage seamless Single Sign-On (SSO)
-* Implement and manage Federation, excluding manual AD FS deployments
-  * Typically LDAP or some other Third-party Identity provider.  
-* Implement and manage Azure AD Connect Health
-* Troubleshoot synchronization errors
-  * Duplicate error means: On-prem AD-object got deleted etc. 
+    * Manage external collaboration settings in Azure AD
+        Business Case: Collaborating with external partners on a project.
+        Product Solution: Azure AD B2B Collaboration.
+        Pros: Secure collaboration, resource sharing without creating internal accounts.
+        Cons: Requires management of external identities, potential security concerns.
+        Licensing: Requires Azure AD Premium P1 for advanced features.
 
-## Implement authentication and access management (25–30%)
+    * Invite external users, individually or in bulk
+        Business Case: Inviting attendees for a large external webinar.
+        Product Solution: Azure AD B2B Invitations.
+        Pros: Scalable, efficient, secure.
+        Cons: Requires proper email addresses, potential for bulk invitation errors.
+        Licensing: Requires Azure AD Premium P1.
 
-### Plan, implement, and manage Azure Multifactor Authentication (MFA) and self-service password reset
-* Plan Azure MFA deployment, excluding MFA Server
-* Configure and deploy self-service password reset
-* Implement and manage Azure MFA settings
-* Manage MFA settings for users
-* Extend Azure AD MFA to third party and on-premises devices
-* Monitor Azure AD MFA activity 
+    * Manage external user accounts in Azure AD
+        Business Case: Offboarding external consultants after project completion.
+        Product Solution: Azure AD External Identity Management.
+        Pros: Centralized management, ensures security by removing unnecessary access.
+        Cons: Requires regular auditing, potential for oversight.
+        Licensing: Requires Azure AD Premium P1.
 
-### Plan, implement, and manage Azure AD user authentication
-* Plan for authentication
-* Implement and manage authentication methods
-* Implement and manage Windows Hello for Business
-* Implement and manage password protection and smart lockout
-* Implement certificate-based authentication in Azure AD
-* Configure Azure AD user authentication for Windows and Linux virtual machines on Azure 
+    * Configure identity providers, including SAML or WS-fed
+        Business Case: Integrating a third-party SaaS application for single sign-on.
+        Product Solution: Azure AD SAML/WS-Federation Integration.
+        Pros: Seamless user experience, enhanced security, centralized authentication.
+        Cons: Requires configuration on both ends, potential for integration errors.
+        Licensing: Requires Azure AD Premium P1.
 
-### Plan, implement, and manage Azure AD conditional access
-* Plan conditional access policies
-* Implement conditional access policy assignments
-* Implement conditional access policy controls
-* Test and troubleshoot conditional access policies
-* Implement session management
-* Implement device-enforced restrictions
-* Implement continuous access evaluation
-* Create a conditional access policy from a template 
+   ### Create, configure, and manage Azure AD identities
 
-### Manage Azure AD Identity Protection
-* Implement and manage a user risk policy
-* Implement and manage sign-in risk policy
-* Implement and manage MFA registration policy
-* Monitor, investigate and remediate risky users
-* Implement security for workload identities 
-Implement access management for Azure resources
-* Assign Azure roles
-* Configure custom Azure roles
-* Create and configure managed identities
-* Use managed identities to access Azure resources
-* Analyze Azure role permissions
-* Configure Azure Key Vault RBAC and policies 
+    * Create, configure, and manage users
+        Business Case: Onboarding new employees and managing user access across the organization.
+        Product Solution: Azure AD User Management.
+        Pros: Centralized management, automation capabilities, integration with other systems.
+        Cons: Requires proper planning and governance, potential complexity.
+        Licensing: Available in Azure AD Free, advanced features in Premium P1.
 
-## Implement access management for applications (15–20%)
+    * Create, configure, and manage groups
+        Business Case: Managing access to resources for different teams or departments.
+        Product Solution: Azure AD Groups.
+        Pros: Simplifies permission management, enhances collaboration.
+        Cons: Can become complex if not properly managed, potential for permission overlap.
+        Licensing: Available in Azure AD Free, advanced features in Premium P1.
 
-### Manage and monitor application access by using Microsoft Defender for Cloud Apps
-* Discover and manage apps by using Microsoft Defender for Cloud Apps
-* Configure connectors to apps
-* Implement application-enforced restrictions
-* Configure conditional access app control
-* Create access and session policies in Microsoft Defender for Cloud Apps
-* Implement and manage policies for OAUTH apps 
+    * Configure and manage device join and registration, including writeback
+        Business Case: Enabling employees to use their devices to access company resources securely.
+        Product Solution: Azure AD Device Management.
+        Pros: Enhances mobility, improves security, supports BYOD policies.
+        Cons: Requires robust security policies, potential complexity in management.
+        Licensing: Requires Azure AD Premium P1.
 
-### Plan, implement, and monitor the integration of Enterprise applications
-* Configure and manage user and admin consent
-* Discover apps by using ADFS application activity reports
-* Design and implement access management for apps
-* Design and implement app management roles
-* Monitor and audit activity in enterprise applications
-* Design and implement integration for on-premises apps by using Azure AD Application Proxy
-* Design and implement integration for SaaS apps
-* Provision and manage users, groups, and roles on Enterprise applications
-* Create and manage application collections 
+    * Assign, modify, and report on licenses
+        Business Case: Managing software licenses for different users and departments.
+        Product Solution: Azure AD License Management.
+        Pros: Cost control, compliance with licensing agreements, flexibility.
+        Cons: Requires ongoing monitoring, potential complexity.
+        Licensing: Available in Azure AD Free, advanced features in Premium P1.
 
-### Plan and implement application registrations
-* Plan for application registrations
-* Implement application registrations
-* Configure application permissions
-* Implement application authorization
-* Plan and configure multi-tier application permissions
-* Manage and monitor applications by using App governance 
+### Implement and manage external identities
 
-## Plan and implement identity governance in Azure AD (20–25%)
+    * Manage external collaboration settings in Azure AD
+        Business Case: Collaborating with external partners or vendors on projects.
+        Product Solution: Azure AD B2B Collaboration.
+        Pros: Secure collaboration, simplified access management, scalability.
+        Cons: Requires governance policies, potential complexity.
+        Licensing: Consumption-based pricing for external users.
 
-### Plan and implement entitlement management
-* Plan entitlements
-* Create and configure catalogs
-* Create and configure access packages
-* Manage access requests
-* Implement and manage terms of use
-* Manage the lifecycle of external users in Azure AD Identity Governance settings
-* Configure and manage connected organizations
-* Review per-user entitlements by using Azure AD Entitlement management
+    * Invite external users, individually or in bulk
+        Business Case: Inviting external collaborators for a specific project or event.
+        Product Solution: Azure AD B2B Invitations.
+        Pros: Streamlined process, secure access, integration with existing tools.
+        Cons: Requires monitoring and management, potential security considerations.
+        Licensing: Consumption-based pricing for external users.
 
-###  Plan, implement, and manage access reviews
-* Plan for access reviews
-* Create and configure access reviews for groups and apps
-* Create and configure access review programs
-* Monitor access review activity
-* Respond to access review activity, including automated and manual responses
+    * Manage external user accounts in Azure AD
+        Business Case: Managing access for external contractors, vendors, or partners.
+        Product Solution: Azure AD External Identity Management.
+        Pros: Centralized control, enhanced security, flexibility.
+        Cons: Requires proper planning and governance, potential complexity.
+        Licensing: Consumption-based pricing for external users.
 
-###  Plan and implement privileged access
-* Plan and manage Azure roles in Privileged Identity Management (PIM), including settings and assignments
-* Plan and manage Azure resources in PIM, including settings and assignments
-* Plan and configure Privileged Access groups
-* Manage PIM requests and approval process
-* Analyze PIM audit history and reports
-* Create and manage break-glass accounts
- 
-### Monitor Azure AD
-* Design a strategy for monitoring Azure AD
-* Review and analyze sign-in, audit, and provisioning logs by using the Azure Active Directory admin center
-* Configure diagnostic settings, including Log Analytics, storage accounts, and Event Hub
-* Monitor Azure AD by using Log Analytics, including KQL queries
-* Analyze Azure AD by using workbooks and reporting in the Azure Active Directory admin center
-* Monitor and improve the security posture by using the Identity Secure Score
+    * Configure identity providers, including SAML or WS-fed
+        Business Case: Integrating with third-party identity providers for SSO.
+        Product Solution: Azure AD Identity Providers.
+        Pros: Simplifies authentication, enhances user experience, supports various protocols.
+        Cons: Requires proper configuration and testing, potential compatibility issues.
+        Licensing: Requires Azure AD Premium P1.

@@ -5,8 +5,13 @@
 ### Configure and manage an Azure AD tenant
 * Configure and manage Azure AD roles
 * Configure delegation by using administrative units
+  * Requires typically a owener of the group. 
 * Analyze Azure AD role permissions
+  * Auth admin, Security Admin, User Admin, Global Admin - Permissions, scopes, limitations and least privilge. 
 * Configure and manage custom domains
+  * Veryfing DNS domain with MX and TXT -> Set to primary 
+  * A vs AAAA
+  * CNAME 
 * Configure tenant-wide settings 
 
 ### Create, configure, and manage Azure AD identities
@@ -23,13 +28,23 @@
 
 ### Implement and manage hybrid identity
 * Implement and manage Azure AD Connect
+  * PHS, PTA and Federation
 * Implement and manage Azure AD Connect cloud sync
+  *  Prefered Cloud Native Sync
 * Implement and manage Password Hash Synchronization (PHS)
+  *  Prefered Cloud Native Sync
+  *  Makes a hashed copy of the passwords of the users.
+  *  No more future development
 * Implement and manage Pass-Through Authentication (PTA)
+  *  Installed agents on-prem
+  *  Security risk: If on-prem AD DS is unavaible, it can't authenticate a user. Therefore some choose to use PTA with PHS.
+  *  No more future development
 * Implement and manage seamless Single Sign-On (SSO)
 * Implement and manage Federation, excluding manual AD FS deployments
+  * Typically LDAP or some other Third-party Identity provider.  
 * Implement and manage Azure AD Connect Health
-* Troubleshoot synchronization errors 
+* Troubleshoot synchronization errors
+  * Duplicate error means: On-prem AD-object got deleted etc. 
 
 ## Implement authentication and access management (25–30%)
 

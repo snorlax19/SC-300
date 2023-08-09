@@ -1,3 +1,5 @@
+_Please note that this table is meant to provide an overview of different tasks, their business cases, associated products/services/methods, pros, cons, security risks, and license requirements. It's recommended to refer to Microsoft's official documentation and resources for more detailed and up-to-date information on these topics._
+
 # Implement identities in Azure AD (20–25%)
 
 ---

@@ -1,4 +1,4 @@
-# SC-300 - Study Guide  
+# SC-300 - Study Guide 2023
 
 ### Notes 
 * See **"Study-Notes"** for notes. 
